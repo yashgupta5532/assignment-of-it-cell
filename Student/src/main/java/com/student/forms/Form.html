@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Form</title>
+    <link rel="stylesheet" href="Styles.css" />
+    <!-- Link to external CSS file -->
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="form-container">
+        <form id="educationForm" action="http://localhost:9090/saveFormData" method="POST">
+          <label for="qualification_id">Qualification ID:</label>
+          <input
+            type="number"
+            id="qualification_id"
+            name="qualification_id"
+            required
+          /><br /><br />
+
+          <label for="institute">Institute:</label>
+          <select
+            id="institute"
+            name="institute"
+            onchange="updateQualificationId()"
+            required
+          >
+            <option value="">Select Institute</option>
+            <option value="1">10th Institute</option>
+            <option value="2">Diploma Institute</option>
+            <option value="3">12th Institute</option>
+            <option value="4">Grad Institute</option>
+            <option value="5">PG Institute</option></select
+          ><br /><br />
+
+          <label for="board_university">Board/University:</label>
+          <input
+            type="text"
+            id="board_university"
+            name="board_university"
+            required
+          /><br /><br />
+
+          <label>Status:</label><br />
+          <div style="display: flex">
+            <input
+              type="radio"
+              id="status_success"
+              name="status"
+              value="success"
+              required
+            />
+            <label for="status_success">Success</label>
+            <input
+              type="radio"
+              id="status_fail"
+              name="status"
+              value="fail"
+              required
+            />
+            <label for="status_fail">Fail</label><br /><br />
+          </div>
+
+          <label for="pass_year">Pass Year:</label>
+          <select id="pass_year" name="pass_year" required>
+            <option value="">Select Pass Year</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <!-- Add more options as needed --></select
+          ><br /><br />
+
+          <label for="pass_percentage">Pass Percentage:</label>
+          <input
+            type="text"
+            id="pass_percentage"
+            name="pass_percentage"
+          /><br /><br />
+
+          <label for="score_type">Score Type:</label>
+          <select id="score_type" name="score_type" required>
+            <option value="">Select Score Type</option>
+            <option value="good">Good</option>
+            <option value="excellent">Excellent</option>
+            <!-- Add more options as needed --></select
+          ><br /><br />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <script src="Form.js"></script>
+  </body>
+</html>
